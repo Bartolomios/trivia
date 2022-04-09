@@ -1,0 +1,19 @@
+@use '../abstracts'as *;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;900&display=swap');
+
+
+html {
+    font-size: 62.5%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body{
+     background-color: $primary-bg;
+     font-size: 1.6rem;
+    font-family: 'Quicksand', sans-serif;
+} 
