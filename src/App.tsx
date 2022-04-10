@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes ,Route } from 'react-router-dom';
 import './styles/style.scss';  
-import QuizView from './views/QuizView';
-import ScoreView from './views/ScoreView';
-import WelcomeView from './views/WelcomeView';
+import QuizView from './views/QuizView/QuizView';
+import ScoreView from './views/ScoreView/ScoreView';
+import WelcomeView from './views/WelcomeView/WelcomeView';
 
 
 const App = () => (
