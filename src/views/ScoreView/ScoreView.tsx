@@ -1,8 +1,9 @@
 import React from 'react';
+import View from '../../components/View/View';
 
 const ScoreView = () =>{
     return (
-        <div>Score View</div>
+        <View isPurple={true}>Score View</View>
     )
 }
 

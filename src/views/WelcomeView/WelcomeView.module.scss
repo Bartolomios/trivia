@@ -1,20 +1,5 @@
-@use '../../styles/abstracts'as *;
+@use '../../styles/abstracts' as *;
 
-.view {
-    background-color: $primary-bg;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    padding-bottom: 5rem;
-
-    @include max(md) {
-        padding-top: 3rem;
-    }
-}
 
 .logo {
     margin-bottom: 7rem;
@@ -74,6 +59,10 @@ input {
     outline: none;
     font-size: 1.8rem;
     border: 1px solid $white;
+
+    &::placeholder{
+         color: $white;
+    }
 }
 
 .decoration {

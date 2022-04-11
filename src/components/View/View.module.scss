@@ -1,0 +1,21 @@
+@use '../../styles/abstracts'as *;
+
+.view {
+    background-color: $white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;  
+    padding-bottom: 5rem;
+
+    @include max(md) {
+        padding-top: 3rem;
+    }
+
+    &Purple{
+    background-color: $primary-bg;
+    }
+} 

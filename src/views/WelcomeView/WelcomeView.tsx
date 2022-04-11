@@ -1,17 +1,20 @@
-import React from 'react';
+import {useState} from 'react';
+import { useNavigate } from "react-router-dom";
 import styles from './WelcomeView.module.scss';
 import logo from '../../assets/icons/logo.svg';
 import cup from '../../assets/icons/cup-icon.svg';
 import amount from '../../assets/icons/points-icon.svg'
 import Select from '../../components/Select/Select';
 import StartButton from '../../components/StartButton/StartButton';
-import { useNavigate } from "react-router-dom";
+import View from '../../components/View/View';
 
 
 const WelcomeView = () =>{
 
-    let navigate = useNavigate();
-
+    const [selected, setSelected] = useState("Select...");
+    const options = ['Easy', 'Medium', 'Hard'];
+    
+    const navigate = useNavigate(); 
 
     const startGame = () =>{
         console.log("Game has started");  
@@ -19,7 +22,7 @@ const WelcomeView = () =>{
     }
 
     return(
-        <div className={styles.view}>
+        <View isPurple={true}>
             <img alt="decoration" className={styles.decorationTopLeft}/>
             <img alt="decoration"className={styles.decorationBottomLeft}/>
             <img alt="decoration" className={styles.decorationTopRight}/>
@@ -33,17 +36,17 @@ const WelcomeView = () =>{
                     <img className={styles.labelIcon} src={cup} alt="cup icon"/>
                     <div className={styles.labelTitle}>Difficulty</div>
                 </div>
-                <Select/>
+                <Select options={options} selected={selected} setSelected={setSelected}/>
                  <div className={styles.label}>
-                    <img className={styles.labelIcon} src={amount} alt="cup icon"/>
+                    <img className={styles.labelIcon} src={amount} alt="amount icon"/>
                     <div className={styles.labelTitle}>Amount</div>
                 </div>
-                <input type="text" className={styles.input} placeholder=""/>
+                <input type="text" className={styles.input} placeholder="Type number from 1 to 50"/>
                 <StartButton startGame={startGame}>Play</StartButton>     
               </div>
             </div>
-         
-        </div>
+        </View>       
+       
     )
 
 }
