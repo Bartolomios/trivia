@@ -32,7 +32,7 @@ const Select = ({selected , setSelected, options} : Props)  =>{
                         setSelected(option);
                         setIsActive(false);
                         }}
-                    key="option"    
+                    key={option}    
                     className={styles.selectItem}> 
                     {option}
                 </div>

@@ -1,5 +1,6 @@
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import View from '../../components/View/View';
+import Button from '../../components/Button/Button';
 import styles from './QuizView.module.scss';
 
 const QuizView = () =>{ 
@@ -18,6 +19,8 @@ const QuizView = () =>{
                     <div className={styles.questionTitle}>
                          The retail disc of Tony Hawk’s Pro Skater 5 only comes with the tutorial
                     </div>
+                    <Button variant="Purple">True</Button>
+                    <Button variant="White">False</Button>
               </div>         
          </View>
          )

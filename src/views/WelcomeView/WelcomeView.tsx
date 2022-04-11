@@ -5,8 +5,9 @@ import logo from '../../assets/icons/logo.svg';
 import cup from '../../assets/icons/cup-icon.svg';
 import amount from '../../assets/icons/points-icon.svg'
 import Select from '../../components/Select/Select';
-import StartButton from '../../components/StartButton/StartButton';
+import Button from '../../components/Button/Button';
 import View from '../../components/View/View';
+import fetchQuestions from '../../api/Api';
 
 
 const WelcomeView = () =>{
@@ -18,6 +19,7 @@ const WelcomeView = () =>{
 
     const startGame = () =>{
         console.log("Game has started");  
+        fetchQuestions(10, "hard");
         navigate("../quiz", { replace: true });
     }
 
@@ -42,7 +44,7 @@ const WelcomeView = () =>{
                     <div className={styles.labelTitle}>Amount</div>
                 </div>
                 <input type="text" className={styles.input} placeholder="Type number from 1 to 50"/>
-                <StartButton startGame={startGame}>Play</StartButton>     
+                <Button variant="Orange" startGame={startGame}>Play</Button>     
               </div>
             </div>
         </View>       
