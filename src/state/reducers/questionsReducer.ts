@@ -2,31 +2,40 @@ import { Action } from '../actions';
 import { ActionType } from "../action-types"
 
 type QuestionsStates = {
-  questions:object[]
+  questions : object[],
+  completeQuestions : object[],
+  amount : number | null,
+  difficulty : string
 }
-
-
 
 const initialState : QuestionsStates = {
 
-    questions: [
-        {
-        category: 'Entertainment: Video Games',
-        type: 'boolean',
-        difficulty: 'hard',
-        question: 'Unturned originally started as a Roblox game.', 
-        correct_answer: 'True',
-        ncorrect_answers:'False',                
-       }                       
-    ]
+    questions: [],
+    completeQuestions: [],
+    amount: null,
+    difficulty: ''
+
 };
 
 const questionsReducer = (state: object =  initialState, action: Action) =>{
+
     switch(action.type){
+
         case ActionType.FETCH:
-            return [state , action.payload];
+            return {
+                ...state,
+                questions : action.payload
+            }
+
         case ActionType.RESET:
-            return 0
+            return initialState 
+
+        case ActionType.AMOUNT:
+            return {
+                ...state,
+                amount : action.payload
+            }
+
         default:
             return state
     }

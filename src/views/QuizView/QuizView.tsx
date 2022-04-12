@@ -2,8 +2,16 @@ import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import View from '../../components/View/View';
 import Button from '../../components/Button/Button';
 import styles from './QuizView.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { State } from '../../state';
 
 const QuizView = () =>{ 
+
+    const questions = useSelector((state : State) => state.questionsReducer)
+
+
+
+
     return(
 
          <View>
@@ -13,6 +21,7 @@ const QuizView = () =>{
             <img alt="decoration" className={styles.decorationBottomRight}/>
 
               <div className={styles.container}>
+                       
                     <div className={styles.categoryName}>Entertainment: Videogames</div> 
                     <div className={styles.level}>Level: Medium</div>
                     <ProgressBar/>

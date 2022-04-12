@@ -1,4 +1,6 @@
 export enum ActionType {
     FETCH = "fetch",
-    RESET = "reset"
-} 
+    RESET = "reset",
+    AMOUNT = "amount"
+}  
+

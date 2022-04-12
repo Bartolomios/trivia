@@ -1,4 +1,3 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes ,Route } from 'react-router-dom';
 import './styles/style.scss';  
@@ -12,9 +11,9 @@ const App = () => (
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-                <Route  path="/" element={<WelcomeView/>} />
-                <Route  path="/quiz" element={<QuizView/>} />
-                <Route  path="/score" element={<ScoreView/>}/>
+                <Route path="/" element={<WelcomeView/>} />
+                <Route path="/quiz" element={<QuizView/>} />
+                <Route path="/score" element={<ScoreView/>}/>
             </Routes>
         </BrowserRouter>
        </Provider>

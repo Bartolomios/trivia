@@ -10,4 +10,9 @@ interface ResetAction {
     payload? : any[]
 }
 
-export type Action = FetchAction | ResetAction
+interface AmountAction {
+    type: ActionType.AMOUNT
+    payload? : number
+}
+
+export type Action = FetchAction | ResetAction | AmountAction
