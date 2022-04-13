@@ -1,9 +1,14 @@
 import { Action } from '../actions';
 import { ActionType } from "../action-types"
 
-type QuestionsStates = {
-  questions : object[],
-  completeQuestions : object[],
+
+interface Results  {
+    question_title : string,
+    question_answer: boolean
+}
+export interface QuestionsStates  {
+  questions : [],
+  results : Results[],
   amount : number | null,
   difficulty : string
 }
@@ -11,13 +16,13 @@ type QuestionsStates = {
 const initialState : QuestionsStates = {
 
     questions: [],
-    completeQuestions: [],
+    results: [],
     amount: null,
     difficulty: ''
 
 };
 
-const questionsReducer = (state: object =  initialState, action: Action) =>{
+const questionsReducer = (state: QuestionsStates =  initialState, action: Action) =>{
 
     switch(action.type){
 
@@ -27,15 +32,33 @@ const questionsReducer = (state: object =  initialState, action: Action) =>{
                 questions : action.payload
             }
 
-        case ActionType.RESET:
-            return initialState 
-
         case ActionType.AMOUNT:
             return {
                 ...state,
                 amount : action.payload
             }
 
+        case ActionType.DIFFICULTY:
+            return {
+                ...state,
+                difficulty : action.payload
+            }
+        
+        case ActionType.RESULTS:
+            console.log("test");
+            
+            return{
+                ...state,
+                results:[
+                    ...state.results, action.payload
+                ]
+      
+            }    
+
+        case ActionType.RESET:
+            return initialState 
+
+ 
         default:
             return state
     }

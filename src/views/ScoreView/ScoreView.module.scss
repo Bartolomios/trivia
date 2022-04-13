@@ -1,0 +1,59 @@
+@use '../../styles/abstracts'as *;
+
+.decoration {
+    position: absolute;
+    max-height: 70%;
+
+    &Top {
+
+        &Right {
+            @extend .decoration;
+            content: url('../../assets/decorations/mobile-decoration-right-top.svg');
+            right: 0;
+            top: 2rem;
+
+            @include min(md) {
+                content: url('../../assets/decorations/desktop-decoration-right-top.svg');
+
+            }
+
+        }
+
+        &Left {
+            @extend .decoration;
+            content: url('../../assets/decorations/mobile-decoration-left-top.svg');
+            left: 0;
+            top: 0;
+
+
+            @include min(md) {
+                content: url('../../assets/decorations/desktop-decoration-left.svg');
+            }
+        }
+    }
+
+    &Bottom {
+
+        &Right {
+            @extend .decoration;
+            content: url('../../assets/decorations/mobile-decoration-right-bottom.svg');
+            right: 0;
+            bottom: 0;
+
+            @include min(md) {
+                content: url('../../assets/decorations/desktop-decoration-right-bottom.svg');
+            }
+        }
+
+        &Left {
+            @extend .decoration;
+            content: url('../../assets/decorations/mobile-decoration-left-bottom.svg');
+            left: 0;
+            bottom: 0;
+
+            @include min(md) {
+                content: url('../../assets/decorations/desktop-decoration-left-bottom.svg');
+            }
+        }
+    }
+}

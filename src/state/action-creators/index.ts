@@ -15,3 +15,20 @@ export const getAmount = (amount : number) => {
         payload:amount   
     }
 } 
+
+export const getDifficulty = (difficulty : string) => {
+
+    return {
+        type: ActionType.DIFFICULTY,
+        payload:difficulty  
+    }
+} 
+
+export const getResults = (results : Object) =>{
+
+        return {
+        type: ActionType.RESULTS,
+        payload:results 
+        }
+    
+}

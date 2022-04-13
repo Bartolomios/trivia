@@ -1,43 +1,11 @@
 @use '../../styles/abstracts'as *;
 
-.categoryName{
-    font-size: 8.1rem;
-    line-height: 10.1rem;
-    letter-spacing: 0.05em;
-    color:$primary-text;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 3rem;
-}
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    max-width: 65.5rem;
-}
-
-.level{
-    color:$primary-text;
-    font-size: 2.8rem;
-    line-height: 116%;
-    text-transform: lowercase;
-    letter-spacing: 0.5em;
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.question {
-
-    &Title {
-        color: $primary-text;
-        font-weight: 500;
-        font-size: 3.1rem;
-        line-height: 4.5rem;
-        text-align: center;
-        margin-bottom: 7.4rem;
-    }
+    max-width: 66.5rem;
 }
 
 .decoration {

@@ -29,7 +29,7 @@ const Select = ({selected , setSelected, options} : Props)  =>{
                 <div 
                     onClick={(e)=> 
                         {
-                        setSelected(option);
+                        setSelected(option.toString());
                         setIsActive(false);
                         }}
                     key={option}    

@@ -15,4 +15,15 @@ interface AmountAction {
     payload? : number
 }
 
-export type Action = FetchAction | ResetAction | AmountAction
+interface DifficultyAction {
+    type: ActionType.DIFFICULTY
+    payload? : string
+}
+
+interface ResultsActions{
+    type: ActionType.RESULTS
+    payload?: Object
+}
+
+
+export type Action = FetchAction | ResetAction | AmountAction | DifficultyAction | ResultsActions
