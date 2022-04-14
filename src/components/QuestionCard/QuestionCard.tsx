@@ -1,19 +1,21 @@
 import ProgressBar from "../ProgressBar/ProgressBar";
 import styles from "./QuestionCard.module.scss";
+import { decodeStrings } from "../../helpers/decodeStrings";
 
 type Props = {
-  question: any;
+  questionObject: any;
   current: number;
   questionsAmount: number;
 };
 
-const QuestionCard = ({ question, current, questionsAmount }: Props) => {
+const QuestionCard = ({ questionObject, current, questionsAmount }: Props) => {
+  const { category, difficulty, question } = questionObject;
   return (
     <>
-      <div className={styles.categoryName}>{question.category}</div>
-      <div className={styles.level}>Level: {question.difficulty}</div>
+      <div className={styles.categoryName}>{category}</div>
+      <div className={styles.level}>Level: {difficulty}</div>
       <ProgressBar current={current} questionsAmount={questionsAmount} />
-      <div className={styles.questionTitle}>{question.question}</div>
+      <div className={styles.questionTitle}>{decodeStrings(question)}</div>
     </>
   );
 };

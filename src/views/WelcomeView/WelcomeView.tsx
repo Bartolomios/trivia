@@ -8,7 +8,7 @@ import Select from "../../components/Select/Select";
 import Button from "../../components/Button/Button";
 import View from "../../components/View/View";
 import { fetchQuestions } from "../../api/Api";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
 

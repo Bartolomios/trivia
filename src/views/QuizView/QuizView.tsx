@@ -22,12 +22,27 @@ const QuizView = () => {
 
   const { questions }: any = state;
 
-  const nextQuestion = () => {
+  useEffect(() => {
+    if (!questions.length) {
+      navigate("/");
+    }
+  }, [questions, navigate]);
+
+  const nextQuestion = (answer: string) => {
     const increment = current + 1;
 
-    dispatch(getResults({ question_title: "Test", question_answer: true }));
+    const correct_answer = questions[current].correct_answer;
 
-    if (increment === state.questions.length) {
+    const score = correct_answer === answer;
+
+    dispatch(
+      getResults({
+        question_title: questions[current].question,
+        question_answer: score,
+      })
+    );
+
+    if (increment === questions.length) {
       navigate("../score");
     }
     setCurrent(increment);
@@ -40,17 +55,23 @@ const QuizView = () => {
         <img alt="decoration" className={styles.decorationBottomLeft} />
         <img alt="decoration" className={styles.decorationTopRight} />
         <img alt="decoration" className={styles.decorationBottomRight} />
-        <QuestionCard
-          current={current}
-          questionsAmount={state.questions.length}
-          question={questions[current]}
-        ></QuestionCard>
-        <Button callback={nextQuestion} variant="Purple" boolean={true}>
-          True
-        </Button>
-        <Button callback={nextQuestion} variant="White" boolean={false}>
-          False
-        </Button>
+        {questions.length ? (
+          <>
+            <QuestionCard
+              current={current}
+              questionsAmount={state.questions.length}
+              questionObject={questions[current]}
+            ></QuestionCard>
+            <Button callback={() => nextQuestion("True")} variant="Purple">
+              True
+            </Button>
+            <Button callback={() => nextQuestion("False")} variant="White">
+              False
+            </Button>
+          </>
+        ) : (
+          <div> Back to Start </div>
+        )}
       </div>
     </View>
   );

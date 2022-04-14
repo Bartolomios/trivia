@@ -3,7 +3,7 @@ import cx from "classnames";
 
 type Props = {
   children?: string;
-  callback?: () => void;
+  callback?: any;
   variant: string;
   boolean?: boolean;
 };

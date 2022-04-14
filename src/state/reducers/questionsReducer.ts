@@ -44,15 +44,12 @@ const questionsReducer = (state: QuestionsStates =  initialState, action: Action
                 difficulty : action.payload
             }
         
-        case ActionType.RESULTS:
-            console.log("test");
-            
+        case ActionType.RESULTS:            
             return{
                 ...state,
                 results:[
                     ...state.results, action.payload
-                ]
-      
+                ]      
             }    
 
         case ActionType.RESET:
