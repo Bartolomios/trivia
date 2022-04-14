@@ -35,12 +35,10 @@ const QuizView = () => {
 
     const score = correct_answer === answer;
 
-    dispatch(
-      getResults({
-        question_title: questions[current].question,
-        question_answer: score,
-      })
-    );
+    getResults({
+      question_title: questions[current].question,
+      question_answer: score,
+    });
 
     if (increment === questions.length) {
       navigate("../score");
@@ -62,10 +60,10 @@ const QuizView = () => {
               questionsAmount={state.questions.length}
               questionObject={questions[current]}
             ></QuestionCard>
-            <Button callback={() => nextQuestion("True")} variant="Purple">
+            <Button onClick={() => nextQuestion("True")} variant="Purple">
               True
             </Button>
-            <Button callback={() => nextQuestion("False")} variant="White">
+            <Button onClick={() => nextQuestion("False")} variant="White">
               False
             </Button>
           </>

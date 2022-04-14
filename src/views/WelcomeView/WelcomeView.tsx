@@ -31,9 +31,9 @@ const WelcomeView = () => {
   };
 
   const startGame = () => {
-    dispatch(getAmount(amount));
-    dispatch(getDifficulty(selected));
-    fetchQuestions(amount, selected.toLowerCase(), getQuestions, dispatch);
+    getAmount(amount);
+    getDifficulty(selected);
+    fetchQuestions(amount, selected.toLowerCase(), getQuestions);
 
     setTimeout(() => navigate("../quiz", { replace: true }), 1000);
   };
@@ -71,7 +71,7 @@ const WelcomeView = () => {
             className={styles.input}
             placeholder="Type number from 1 to 50"
           />
-          <Button variant="Orange" callback={startGame}>
+          <Button variant="Orange" onClick={startGame}>
             Play
           </Button>
         </div>

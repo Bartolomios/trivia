@@ -1,0 +1,14 @@
+@use "../../styles/abstracts" as *;
+
+.list {
+  position: relative;
+  width: 100%;
+  max-width: 65rem;
+  max-height: 70rem;
+  padding: 0 1.5rem;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

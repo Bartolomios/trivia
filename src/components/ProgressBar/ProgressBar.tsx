@@ -1,4 +1,5 @@
 import styles from "./ProgressBar.module.scss";
+import { minTwoNumbers } from "../../helpers/minTwoNumbers";
 
 type Props = {
   current: number;
@@ -12,7 +13,9 @@ const ProgressBar = ({ current, questionsAmount }: Props) => {
   return (
     <div className={styles.progress}>
       <div className={styles.progressValue}>
-        <span className={styles.progressCurrent}>{currentQuestion}</span>
+        <span className={styles.progressCurrent}>
+          {minTwoNumbers(currentQuestion)}
+        </span>
         <span className={styles.separator}>/</span>
         <span className={styles.progressLimit}>{questionsAmount}</span>
       </div>

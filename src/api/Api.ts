@@ -1,15 +1,17 @@
-import { Dispatch } from "redux";
 
- export const fetchQuestions = async (amount : number, difficulty: string, getQuestions : Function , dispatch : Dispatch) =>
+
+ export const fetchQuestions = async (amount : number, difficulty: string, getQuestions : Function) =>
     {
         const endpoint = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=boolean`;  
-        const promise = fetch(endpoint)
+        const promise = fetch(endpoint)        
 
-        try{           
+        try{               
         const response = await promise;
+        console.log(response);
+        
         const data = await response.json();     
          
-        dispatch(getQuestions((data.results)));
+        getQuestions((data.results))
         }
         catch(error){
             console.log(error);        

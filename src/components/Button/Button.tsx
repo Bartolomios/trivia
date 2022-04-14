@@ -1,14 +1,13 @@
 import styles from "./Button.module.scss";
 import cx from "classnames";
+import { ButtonHTMLAttributes } from "react";
 
-type Props = {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: string;
-  callback?: any;
   variant: string;
-  boolean?: boolean;
 };
 
-const Button = ({ children, callback, variant, boolean }: Props) => {
+const Button = ({ children, variant, ...other }: Props) => {
   const classList = cx(styles.button, {
     [styles.buttonOrange]: variant === "Orange",
     [styles.buttonPurple]: variant === "Purple",
@@ -16,7 +15,7 @@ const Button = ({ children, callback, variant, boolean }: Props) => {
   });
 
   return (
-    <button onClick={callback} className={classList}>
+    <button className={classList} {...other}>
       {children}
     </button>
   );

@@ -1,20 +1,17 @@
-import { QuestionsStates } from "../../state/reducers/questionsReducer";
-import { useDispatch, useSelector } from "react-redux";
-import { State } from "../../state";
 import ScoreItem from "../ScoreItem/ScoreItem";
+import styles from "./ScoreList.module.scss";
 
-const ScoreList = () => {
-  const state: QuestionsStates = useSelector(
-    (state: State) => state.questionsReducer
-  );
+type Props = {
+  results: Object[];
+};
 
-  const { results }: any = state;
-
+const ScoreList = ({ results }: Props) => {
   return (
-    <div>
+    <div className={styles.list}>
       {results.map((result: any) => {
         return (
           <ScoreItem
+            key={result.question_title}
             questionTitle={result.question_title}
             questionAnswer={result.question_answer}
           />

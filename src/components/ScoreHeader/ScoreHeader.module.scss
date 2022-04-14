@@ -1,0 +1,43 @@
+@use "../../styles/abstracts" as *;
+
+.header {
+  &Top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.8rem;
+  }
+
+  &Text {
+    color: $white;
+    font-size: 2.1rem;
+    line-height: 2.3rem;
+    margin-right: 1rem;
+  }
+}
+
+.score {
+  &Amount {
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+    font-weight: 700;
+    color: $orange-number;
+  }
+
+  &Total {
+    font-size: 2.1rem;
+    line-height: 2.3rem;
+    color: $white;
+  }
+
+  &Separator {
+    font-size: 2.1rem;
+    color: $white;
+  }
+}
+
+.avatar {
+  background: white;
+  border-radius: 100%;
+  margin-right: 1.5rem;
+}
