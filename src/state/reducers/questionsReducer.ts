@@ -6,30 +6,33 @@ interface Results  {
     question_title : string,
     question_answer: boolean
 }
-export interface QuestionsStates  {
+export interface IQuestionsStates  {
   questions : [],
   results : Results[],
   amount : number | null,
   difficulty : string
+  status: ""
 }
 
-const initialState : QuestionsStates = {
+const initialState : IQuestionsStates = {
 
     questions: [],
     results: [],
     amount: null,
-    difficulty: ''
+    difficulty: '',
+    status:''
 
 };
 
-const questionsReducer = (state: QuestionsStates =  initialState, action: Action) =>{
+const questionsReducer = (state: IQuestionsStates =  initialState, action: Action) =>{
 
     switch(action.type){
 
         case ActionType.FETCH:
             return {
-                ...state,
-                questions : action.payload
+                ...state,                
+                questions : action.payload,
+                results:[]
             }
 
         case ActionType.AMOUNT:

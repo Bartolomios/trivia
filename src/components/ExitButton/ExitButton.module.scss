@@ -1,0 +1,45 @@
+@use "../../styles/abstracts" as *;
+
+.button {
+  position: absolute;
+  top: 0;
+  right: 3rem;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: 0.3s;
+
+  svg {
+    transition: 0.3s;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    svg {
+      path {
+        fill: $orange-number;
+      }
+    }
+  }
+
+  &White {
+    @extend .button;
+    svg {
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  &Purple {
+    @extend .button;
+    svg {
+      path {
+        fill: $primary-text;
+      }
+    }
+  }
+}

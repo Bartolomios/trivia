@@ -17,7 +17,9 @@ const ProgressBar = ({ current, questionsAmount }: Props) => {
           {minTwoNumbers(currentQuestion)}
         </span>
         <span className={styles.separator}>/</span>
-        <span className={styles.progressLimit}>{questionsAmount}</span>
+        <span className={styles.progressLimit}>
+          {minTwoNumbers(questionsAmount)}
+        </span>
       </div>
       <div className={styles.progressBar}>
         <div

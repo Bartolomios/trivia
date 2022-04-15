@@ -1,29 +1,30 @@
 import { ActionType } from "../action-types"
 
-interface FetchAction {
+interface IFetchAction {
     type: ActionType.FETCH
     payload? : any[]
 }
 
-interface ResetAction {
+interface IResetAction {
     type: ActionType.RESET
-    payload? : any[]
+    payload? : any
 }
 
-interface AmountAction {
+interface IAmountAction {
     type: ActionType.AMOUNT
     payload? : number
 }
 
-interface DifficultyAction {
+interface IDifficultyAction {
     type: ActionType.DIFFICULTY
     payload? : string
 }
 
-interface ResultsActions{
+interface IResultsActions{
     type: ActionType.RESULTS
     payload?: Object
 }
 
 
-export type Action = FetchAction | ResetAction | AmountAction | DifficultyAction | ResultsActions
+
+export type Action = IFetchAction | IResetAction | IAmountAction | IDifficultyAction | IResultsActions

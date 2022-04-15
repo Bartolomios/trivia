@@ -1,6 +1,6 @@
 import { ActionType } from "../action-types"
 
-export const getQuestions = (questions : []) => {
+export const setQuestions = (questions : []) => {
 
     return {
         type: ActionType.FETCH,
@@ -8,7 +8,7 @@ export const getQuestions = (questions : []) => {
     }
 } 
 
-export const getAmount = (amount : number) => {
+export const setAmount = (amount : number) => {
 
     return {
         type: ActionType.AMOUNT,
@@ -16,7 +16,7 @@ export const getAmount = (amount : number) => {
     }
 } 
 
-export const getDifficulty = (difficulty : string) => {
+export const setDifficulty = (difficulty : string) => {
 
     return {
         type: ActionType.DIFFICULTY,
@@ -24,7 +24,7 @@ export const getDifficulty = (difficulty : string) => {
     }
 } 
 
-export const getResults = (results : Object) =>{
+export const setResults = (results : Object) =>{
 
         return {
         type: ActionType.RESULTS,
@@ -32,3 +32,10 @@ export const getResults = (results : Object) =>{
         }
     
 }
+
+export const setReset = () =>{
+    return{
+        type: ActionType.RESET
+    }
+}
+

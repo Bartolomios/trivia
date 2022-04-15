@@ -1,128 +1,139 @@
-@use '../../styles/abstracts' as *;
-
+@use "../../styles/abstracts" as *;
 
 .logo {
-    margin-bottom: 7rem;
+  margin-bottom: 7rem;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 .title {
-    font-size: 2.6rem;
-    line-height: 3.2rem;
-    font-weight: 700;
-    color: $white;
-    margin-bottom: 3rem;
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: 3rem;
 
-    @include min(md) {
-        font-size: 4.6rem;
-        line-height: 5.8rem;
-    }
+  @include min(md) {
+    font-size: 4.6rem;
+    line-height: 5.8rem;
+  }
 }
 
 .form {
-    width: 100%;
-    max-width: 47.5rem;
-    padding: 0 1.5rem;
+  width: 100%;
+  max-width: 47.5rem;
+  padding: 0 1.5rem;
 }
 
 .label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
 
-    &Title {
-        color: $orange-light;
-        align-items: center;
-        margin-left: 1.5rem;
-        line-height: 3rem;
-        font-size: 1.5rem;
+  &Title {
+    color: $orange-light;
+    align-items: center;
+    margin-left: 1.5rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+
+    @include max(md) {
+      font-size: 1.3rem;
+      margin-left: 1rem;
     }
+  }
+
+  &Icon {
+    @include max(md) {
+      transform: scale(0.8);
+    }
+  }
 }
 
 input {
-    width: 100%;
-    background: none;
-    box-shadow: 6px 6px 13px -1px rgba(23, 21, 92, 0.06);
-    border-radius: 10px;
-    color: $white;
-    border-color: $white;
-    padding: 2.4rem 1.5rem;
-    margin-bottom: 3.5rem;
-    outline: none;
-    font-size: 1.8rem;
-    border: 1px solid $white;
+  width: 100%;
+  background: none;
+  box-shadow: 6px 6px 13px -1px rgba(23, 21, 92, 0.06);
+  border-radius: 10px;
+  color: $white;
+  border-color: $white;
+  padding: 2.4rem 1.5rem;
+  margin-bottom: 3.5rem;
+  outline: none;
+  font-size: 1.8rem;
+  border: 1px solid $white;
 
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button{
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-    }
+  }
 
-    &::placeholder{
-         color: $white;
-    }
+  &::placeholder {
+    color: $white;
+  }
+
+  @include max(md) {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    padding: 2rem 1.5rem;
+  }
 }
 
 .decoration {
-    position: absolute;
-    max-height: 70%;
+  position: absolute;
+  max-height: 70%;
 
-    &Top {
+  &Top {
+    &Right {
+      @extend .decoration;
+      content: url("../../assets/decorations/mobile-decoration-right-top.svg");
+      right: 0;
+      top: 2rem;
 
-        &Right {
-            @extend .decoration;
-            content: url('../../assets/decorations/mobile-decoration-right-top.svg');
-            right: 0;
-            top: 2rem;
-
-            @include min(md) {
-                content: url('../../assets/decorations/desktop-decoration-right-top.svg');
-
-            }
-
-        }
-
-        &Left {
-            @extend .decoration;
-            content: url('../../assets/decorations/mobile-decoration-left-top.svg');
-            left: 0;
-            top: 0;
-
-
-            @include min(md) {
-                content: url('../../assets/decorations/desktop-decoration-left.svg');
-            }
-        }
+      @include min(md) {
+        content: url("../../assets/decorations/desktop-decoration-right-top.svg");
+      }
     }
 
-    &Bottom {
+    &Left {
+      @extend .decoration;
+      content: url("../../assets/decorations/mobile-decoration-left-top.svg");
+      left: 0;
+      top: 0;
 
-        &Right {
-            @extend .decoration;
-            content: url('../../assets/decorations/mobile-decoration-right-bottom.svg');
-            right: 0;
-            bottom: 0;
-
-            @include min(md) {
-                content: url('../../assets/decorations/desktop-decoration-right-bottom.svg');
-            }
-        }
-
-        &Left {
-            @extend .decoration;
-            content: url('../../assets/decorations/mobile-decoration-left-bottom.svg');
-            left: 0;
-            bottom: 0;
-
-            @include min(md) {
-                content: url('../../assets/decorations/desktop-decoration-left-bottom.svg');
-            }
-        }
+      @include min(md) {
+        content: url("../../assets/decorations/desktop-decoration-left.svg");
+      }
     }
+  }
+
+  &Bottom {
+    &Right {
+      @extend .decoration;
+      content: url("../../assets/decorations/mobile-decoration-right-bottom.svg");
+      right: 0;
+      bottom: 0;
+
+      @include min(md) {
+        content: url("../../assets/decorations/desktop-decoration-right-bottom.svg");
+      }
+    }
+
+    &Left {
+      @extend .decoration;
+      content: url("../../assets/decorations/mobile-decoration-left-bottom.svg");
+      left: 0;
+      bottom: 0;
+
+      @include min(md) {
+        content: url("../../assets/decorations/desktop-decoration-left-bottom.svg");
+      }
+    }
+  }
 }

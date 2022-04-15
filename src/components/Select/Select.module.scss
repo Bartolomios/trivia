@@ -11,6 +11,10 @@
   font-size: 1.8rem;
   position: relative;
 
+  @include max(md) {
+    margin-bottom: 2.5rem;
+  }
+
   &List {
     position: absolute;
     top: 8rem;
@@ -19,6 +23,11 @@
     background: $white;
     width: calc(100% + 0.2rem);
     border: 2px solid $white;
+    z-index: 1;
+
+    @include max(md) {
+      top: 6.5rem;
+    }
   }
 
   &Item {
@@ -31,6 +40,10 @@
       background: $orange-light;
       color: $white;
     }
+
+    @include max(md) {
+      font-size: 1.3rem;
+    }
   }
 
   &Btn {
@@ -39,6 +52,12 @@
     justify-content: space-between;
     cursor: pointer;
     padding: 2.4rem 1.5rem;
+
+    @include max(md) {
+      font-size: 1.3rem;
+      line-height: 2rem;
+      padding: 2rem 1.5rem;
+    }
   }
 
   &Arrow {

@@ -19,7 +19,7 @@ const ScoreItem = ({ questionTitle, questionAnswer }: Props) => {
         </div>
       ) : (
         <div className={styles.answerIncorrect}>
-          <div className={styles.text}>{questionTitle}</div>
+          <div className={styles.text}>{decodeStrings(questionTitle)}</div>
           <img
             src={incorrectIcon}
             alt="incoreect icon"

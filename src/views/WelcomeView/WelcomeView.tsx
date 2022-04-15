@@ -14,26 +14,26 @@ import { actionCreators } from "../../state";
 
 const WelcomeView = () => {
   const dispatch = useDispatch();
-  const { getQuestions, getAmount, getDifficulty } = bindActionCreators(
+  const { setQuestions, setAmount, setDifficulty } = bindActionCreators(
     actionCreators,
     dispatch
   );
 
   const [selected, setSelected] = useState("Select...");
-  const [amount, setAmount] = useState(0);
+  const [inputAmount, setInputAmount] = useState(0);
 
   const options = ["Easy", "Medium", "Hard"];
 
   const navigate = useNavigate();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAmount(parseFloat(event.target.value));
+    setInputAmount(parseFloat(event.target.value));
   };
 
   const startGame = () => {
-    getAmount(amount);
-    getDifficulty(selected);
-    fetchQuestions(amount, selected.toLowerCase(), getQuestions);
+    setAmount(inputAmount);
+    setDifficulty(selected);
+    fetchQuestions(inputAmount, selected.toLowerCase(), setQuestions);
 
     setTimeout(() => navigate("../quiz", { replace: true }), 1000);
   };

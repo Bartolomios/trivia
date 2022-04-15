@@ -1,64 +1,81 @@
-@use '../../styles/abstracts'as *;
+@use "../../styles/abstracts" as *;
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    max-width: 66.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  max-width: 66.5rem;
+
+  @include max(md) {
+    align-items: baseline;
+    padding: 0 2rem;
+  }
 }
 
 .decoration {
-    position: absolute;
-    max-height: 70%;
+  position: absolute;
+  max-height: 70%;
 
-    &Top {
+  &Top {
+    &Right {
+      @extend .decoration;
 
-        &Right {
-            @extend .decoration;
+      right: 0;
+      top: 2rem;
+      content: url("../../assets/decorations/quizView/mobile-decoration-top-right.svg");
 
-            right: 0;
-            top: 2rem;
-
-            @include min(md) {
-                content: url('../../assets/decorations/quizView/desktop-decoration-top-right.svg');
-
-            }
-
-        }
-
-        &Left {
-            @extend .decoration;
-            left: 0;
-            top: 0;
-
-
-            @include min(md) {
-                content: url('../../assets/decorations/quizView/desktop-decoration-top-left.svg');
-            }
-        }
+      @include min(md) {
+        content: url("../../assets/decorations/quizView/desktop-decoration-top-right.svg");
+      }
     }
 
-    &Bottom {
+    &Left {
+      @extend .decoration;
+      left: 0;
+      top: 0;
+      content: url("../../assets/decorations/quizView/mobile-decoration-top-left.svg");
 
-        &Right {
-            @extend .decoration;
-            right: 0;
-            bottom: 0;
-
-            @include min(md) {
-                content: url('../../assets/decorations/quizView/desktop-decoratiobn-bottom-right.svg');
-            }
-        }
-
-        &Left { 
-            @extend .decoration;
-            left: 0;
-            bottom: 0;
-
-            @include min(md) {
-                content: url('../../assets/decorations/quizView/desktop-decoration-bottom-left.svg');
-            }
-        }
+      @include min(md) {
+        content: url("../../assets/decorations/quizView/desktop-decoration-top-left.svg");
+      }
     }
+  }
+
+  &Bottom {
+    &Right {
+      @extend .decoration;
+      right: 0;
+      bottom: 0;
+      content: url("../../assets/decorations/quizView/mobile-decoration-bottom-right.svg");
+
+      @include min(md) {
+        content: url("../../assets/decorations/quizView/desktop-decoration-bottom-right.svg");
+      }
+    }
+
+    &Left {
+      @extend .decoration;
+      left: 0;
+      bottom: 0;
+      content: url("../../assets/decorations/quizView/mobile-decoration-bottom-left.svg");
+
+      @include min(md) {
+        content: url("../../assets/decorations/quizView/desktop-decoration-bottom-left.svg");
+      }
+    }
+  }
+
+  &Middle {
+    &Right {
+      @extend .decoration;
+      right: 0;
+      top: 40%;
+      content: url("../../assets/decorations/quizView/mobile-decoration-middle-right.svg");
+
+      @include min(md) {
+        display: none;
+      }
+    }
+  }
 }

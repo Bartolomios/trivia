@@ -1,33 +1,51 @@
-@use '../../styles/abstracts'as *;
+@use "../../styles/abstracts" as *;
 
-.categoryName{
-    font-size: 8.1rem;
-    line-height: 10.1rem;
-    letter-spacing: 0.05em;
-    color:$primary-text;
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 3rem;
+.categoryName {
+  font-size: 8.1rem;
+  line-height: 10.1rem;
+  letter-spacing: 0.05em;
+  color: $primary-text;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 3rem;
+
+  @include max(md) {
+    font-size: 3.1em;
+    line-height: 3.9rem;
+    width: 100%;
+  }
 }
 
-.level{
-    color:$primary-text;
-    font-size: 2.8rem;
-    line-height: 116%;
-    text-transform: lowercase;
-    letter-spacing: 0.5em;
-    text-align: center;
-    margin-bottom: 4rem;
+.level {
+  color: $primary-text;
+  font-size: 2.8rem;
+  line-height: 116%;
+  text-transform: lowercase;
+  letter-spacing: 0.5em;
+  text-align: center;
+  margin-bottom: 4rem;
+
+  @include max(md) {
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .question {
+  &Title {
+    color: $primary-text;
+    font-weight: 500;
+    font-size: 3.1rem;
+    line-height: 4.5rem;
+    text-align: center;
+    margin-bottom: 7.4rem;
 
-    &Title {
-        color: $primary-text;
-        font-weight: 500;
-        font-size: 3.1rem;
-        line-height: 4.5rem;
-        text-align: center;
-        margin-bottom: 7.4rem;
+    @include max(md) {
+      font-size: 2.5rem;
+      max-width: 90%;
+      line-height: 143.9%;
+      text-align: left;
     }
+  }
 }

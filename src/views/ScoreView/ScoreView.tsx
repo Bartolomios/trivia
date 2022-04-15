@@ -2,22 +2,32 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { State } from "../../state";
-import { QuestionsStates } from "../../state/reducers/questionsReducer";
+import { IQuestionsStates } from "../../state/reducers/questionsReducer";
 import ScoreList from "../../components/ScoreList/ScoreList";
 import View from "../../components/View/View";
 import styles from "./ScoreView.module.scss";
 import Button from "../../components/Button/Button";
 import ScoreHeader from "../../components/ScoreHeader/ScoreHeader";
+import { bindActionCreators } from "redux";
+import { useDispatch } from "react-redux";
+import { actionCreators } from "../../state";
+import ExitButton from "../../components/ExitButton/ExitButton";
+import { fetchQuestions } from "../../api/Api";
 
 const ScoreView = () => {
-  const restartGame = () => {};
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const state: QuestionsStates = useSelector(
+  const { setReset, setQuestions } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
+
+  const state: IQuestionsStates = useSelector(
     (state: State) => state.questionsReducer
   );
 
-  const { results }: any = state;
+  const { results, amount, difficulty }: any = state;
 
   useEffect(() => {
     if (!results.length) {
@@ -29,8 +39,15 @@ const ScoreView = () => {
     return item.question_answer === true;
   });
 
-  console.log(results);
-  console.log(correctResults);
+  const resetGame = () => {
+    setReset();
+    navigate("/");
+  };
+
+  const restartGame = () => {
+    navigate("../quiz");
+    fetchQuestions(amount, difficulty.toLowerCase(), setQuestions);
+  };
 
   return (
     <View isPurple={true}>
@@ -38,11 +55,14 @@ const ScoreView = () => {
       <img alt="decoration" className={styles.decorationBottomLeft} />
       <img alt="decoration" className={styles.decorationTopRight} />
       <img alt="decoration" className={styles.decorationBottomRight} />
-      <ScoreHeader score={correctResults.length} total={results.length} />
-      <ScoreList results={results} />
-      <Button variant="Orange" onClick={restartGame}>
-        Play Agin
-      </Button>
+      <div className={styles.container}>
+        <ScoreHeader score={correctResults.length} total={results.length} />
+        <ScoreList results={results} />
+        <Button variant="Orange" onClick={restartGame}>
+          Play Agin
+        </Button>
+        <ExitButton onClick={() => resetGame()} variant="White" />
+      </div>
     </View>
   );
 };

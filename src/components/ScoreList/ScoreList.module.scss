@@ -5,8 +5,11 @@
   width: 100%;
   max-width: 65rem;
   max-height: 70rem;
-  padding: 0 1.5rem;
   overflow-y: scroll;
+
+  @include max(md) {
+    max-height: 45rem;
+  }
 
   &::-webkit-scrollbar {
     display: none;

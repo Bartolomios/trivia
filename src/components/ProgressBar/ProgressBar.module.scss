@@ -2,7 +2,10 @@
 
 .progress {
   width: 100%;
-  max-width: 40.5rem;
+
+  @include min(md) {
+    max-width: 40.5rem;
+  }
 
   &Value {
     text-align: left;

@@ -1,59 +1,64 @@
-@use '../../styles/abstracts'as *;
+@use "../../styles/abstracts" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 100rem;
+  padding: 0 1.5rem;
+}
 
 .decoration {
-    position: absolute;
-    max-height: 70%;
+  position: absolute;
+  max-height: 70%;
 
-    &Top {
+  &Top {
+    &Right {
+      @extend .decoration;
+      content: url("../../assets/decorations/mobile-decoration-right-top.svg");
+      right: 0;
+      top: 2rem;
 
-        &Right {
-            @extend .decoration;
-            content: url('../../assets/decorations/mobile-decoration-right-top.svg');
-            right: 0;
-            top: 2rem;
-
-            @include min(md) {
-                content: url('../../assets/decorations/desktop-decoration-right-top.svg');
-
-            }
-
-        }
-
-        &Left {
-            @extend .decoration;
-            content: url('../../assets/decorations/mobile-decoration-left-top.svg');
-            left: 0;
-            top: 0;
-
-
-            @include min(md) {
-                content: url('../../assets/decorations/desktop-decoration-left.svg');
-            }
-        }
+      @include min(md) {
+        content: url("../../assets/decorations/desktop-decoration-right-top.svg");
+      }
     }
 
-    &Bottom {
+    &Left {
+      @extend .decoration;
+      content: url("../../assets/decorations/mobile-decoration-left-top.svg");
+      left: 0;
+      top: 0;
 
-        &Right {
-            @extend .decoration;
-            content: url('../../assets/decorations/mobile-decoration-right-bottom.svg');
-            right: 0;
-            bottom: 0;
-
-            @include min(md) {
-                content: url('../../assets/decorations/desktop-decoration-right-bottom.svg');
-            }
-        }
-
-        &Left {
-            @extend .decoration;
-            content: url('../../assets/decorations/mobile-decoration-left-bottom.svg');
-            left: 0;
-            bottom: 0;
-
-            @include min(md) {
-                content: url('../../assets/decorations/desktop-decoration-left-bottom.svg');
-            }
-        }
+      @include min(md) {
+        content: url("../../assets/decorations/desktop-decoration-left.svg");
+      }
     }
+  }
+
+  &Bottom {
+    &Right {
+      @extend .decoration;
+      content: url("../../assets/decorations/mobile-decoration-right-bottom.svg");
+      right: 0;
+      bottom: 0;
+
+      @include min(md) {
+        content: url("../../assets/decorations/desktop-decoration-right-bottom.svg");
+      }
+    }
+
+    &Left {
+      @extend .decoration;
+      content: url("../../assets/decorations/mobile-decoration-left-bottom.svg");
+      left: 0;
+      bottom: 0;
+
+      @include min(md) {
+        content: url("../../assets/decorations/desktop-decoration-left-bottom.svg");
+      }
+    }
+  }
 }

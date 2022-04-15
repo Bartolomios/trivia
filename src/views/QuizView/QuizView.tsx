@@ -6,17 +6,17 @@ import Button from "../../components/Button/Button";
 import styles from "./QuizView.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "../../state";
-import { QuestionsStates } from "../../state/reducers/questionsReducer";
+import { IQuestionsStates } from "../../state/reducers/questionsReducer";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
 
 const QuizView = () => {
   const dispatch = useDispatch();
-  const { getResults } = bindActionCreators(actionCreators, dispatch);
+  const { setResults } = bindActionCreators(actionCreators, dispatch);
   const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
 
-  const state: QuestionsStates = useSelector(
+  const state: IQuestionsStates = useSelector(
     (state: State) => state.questionsReducer
   );
 
@@ -35,7 +35,7 @@ const QuizView = () => {
 
     const score = correct_answer === answer;
 
-    getResults({
+    setResults({
       question_title: questions[current].question,
       question_answer: score,
     });
@@ -53,6 +53,7 @@ const QuizView = () => {
         <img alt="decoration" className={styles.decorationBottomLeft} />
         <img alt="decoration" className={styles.decorationTopRight} />
         <img alt="decoration" className={styles.decorationBottomRight} />
+        <img alt="decoration" className={styles.decorationMiddleRight} />
         {questions.length ? (
           <>
             <QuestionCard
