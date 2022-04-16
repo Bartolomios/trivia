@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/trivia/static/css/main.23d8fbfa.css",
+    "main.js": "/trivia/static/js/main.48214410.js",
+    "static/js/787.9a6d5f81.chunk.js": "/trivia/static/js/787.9a6d5f81.chunk.js",
+    "static/media/logo.svg": "/trivia/static/media/logo.89232d8e966e0c7152ec3891189952ed.svg",
+    "static/media/desktop-decoration-left-bottom.svg": "/trivia/static/media/desktop-decoration-left-bottom.d3908f463dffc071b344.svg",
+    "static/media/desktop-decoration-bottom-left.svg": "/trivia/static/media/desktop-decoration-bottom-left.a9e8bcad8b5aeee61820.svg",
+    "static/media/desktop-decoration-top-right.svg": "/trivia/static/media/desktop-decoration-top-right.6b473e81fc858acc8106.svg",
+    "static/media/desktop-decoration-right-top.svg": "/trivia/static/media/desktop-decoration-right-top.e5d47d32838edbf1a0b2.svg",
+    "static/media/mobile-decoration-bottom-left.svg": "/trivia/static/media/mobile-decoration-bottom-left.68baad1f0dae487307c9.svg",
+    "static/media/avatar-icon.svg": "/trivia/static/media/avatar-icon.5572c8438b6f5ed1477c3dd34b48760e.svg",
+    "static/media/mobile-decoration-left-bottom.svg": "/trivia/static/media/mobile-decoration-left-bottom.23f058e9babe1a332ff7.svg",
+    "static/media/mobile-decoration-top-right.svg": "/trivia/static/media/mobile-decoration-top-right.e686a4aa3b7ac2886565.svg",
+    "static/media/cup-icon.svg": "/trivia/static/media/cup-icon.b19bb3ce2b6778a8c89c2bcebd35dfac.svg",
+    "static/media/mobile-decoration-right-top.svg": "/trivia/static/media/mobile-decoration-right-top.0fe7ebeac1b6dfdf161a.svg",
+    "static/media/points-icon.svg": "/trivia/static/media/points-icon.d2b8e2425d44313cffcf5297adb2b27d.svg",
+    "index.html": "/trivia/index.html",
+    "static/media/icon-correct.svg": "/trivia/static/media/icon-correct.be59375bfa485bc027ffc1c80bb2d829.svg",
+    "static/media/white-arrow-down.svg": "/trivia/static/media/white-arrow-down.8e4fbb502be3e509421d7ac8898a5860.svg",
+    "static/media/icon-incorrect.svg": "/trivia/static/media/icon-incorrect.6df828b87f362375741861abd0ae8626.svg",
+    "static/media/desktop-decoration-left.svg": "/trivia/static/media/desktop-decoration-left.3fcdd420968503440747.svg",
+    "static/media/mobile-decoration-left-top.svg": "/trivia/static/media/mobile-decoration-left-top.e2d1e66ee0fe6953949c.svg",
+    "static/media/desktop-decoration-right-bottom.svg": "/trivia/static/media/desktop-decoration-right-bottom.d93f1f6061446cdace22.svg",
+    "static/media/mobile-decoration-middle-right.svg": "/trivia/static/media/mobile-decoration-middle-right.3b1577e8e6359bd966bd.svg",
+    "static/media/mobile-decoration-right-bottom.svg": "/trivia/static/media/mobile-decoration-right-bottom.10cf9e1bda97b2511943.svg",
+    "static/media/colored-star-icon.svg": "/trivia/static/media/colored-star-icon.b339d7f811c2b4066867d0989f527d75.svg",
+    "static/media/transparent-star-icon.svg": "/trivia/static/media/transparent-star-icon.44de9ff18d4c0e012309820010211844.svg",
+    "static/media/desktop-decoration-bottom-right.svg": "/trivia/static/media/desktop-decoration-bottom-right.2e0af929d96cb11b8f2b.svg",
+    "static/media/desktop-decoration-top-left.svg": "/trivia/static/media/desktop-decoration-top-left.2fa732dc6c5a1681ca86.svg",
+    "static/media/mobile-decoration-bottom-right.svg": "/trivia/static/media/mobile-decoration-bottom-right.bd3a862358e366b53c87.svg",
+    "static/media/mobile-decoration-top-left.svg": "/trivia/static/media/mobile-decoration-top-left.a4c70974294acd9d11e3.svg",
+    "main.23d8fbfa.css.map": "/trivia/static/css/main.23d8fbfa.css.map",
+    "main.48214410.js.map": "/trivia/static/js/main.48214410.js.map",
+    "787.9a6d5f81.chunk.js.map": "/trivia/static/js/787.9a6d5f81.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23d8fbfa.css",
+    "static/js/main.48214410.js"
+  ]
+}
