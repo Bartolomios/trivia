@@ -11,7 +11,7 @@ export interface IQuestionsStates  {
   results : Results[],
   amount : number | null,
   difficulty : string
-  status: ""
+  status: string
 }
 
 const initialState : IQuestionsStates = {
@@ -20,7 +20,7 @@ const initialState : IQuestionsStates = {
     results: [],
     amount: null,
     difficulty: '',
-    status:''
+    status:'IDLE'
 
 };
 
@@ -57,6 +57,12 @@ const questionsReducer = (state: IQuestionsStates =  initialState, action: Actio
 
         case ActionType.RESET:
             return initialState 
+
+        case ActionType.STATUS:
+            return {
+                ...state,
+                status: action.payload
+            }    
 
  
         default:

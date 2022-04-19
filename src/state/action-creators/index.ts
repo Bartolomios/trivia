@@ -39,3 +39,9 @@ export const setReset = () =>{
     }
 }
 
+export const setStatus = (status : string) =>{
+    return{
+        type:ActionType.STATUS,
+        payload: status
+    }
+}

@@ -3,6 +3,7 @@ export enum ActionType {
     RESET = "reset",
     AMOUNT = "amount",
     DIFFICULTY = "difficulty",
-    RESULTS = "results"
+    RESULTS = "results",
+    STATUS = "status"
 }  
 

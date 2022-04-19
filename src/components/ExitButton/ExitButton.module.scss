@@ -12,6 +12,11 @@
   height: 2.5rem;
   transition: 0.3s;
 
+  @include max(md) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
   svg {
     transition: 0.3s;
   }
@@ -36,10 +41,16 @@
 
   &Purple {
     @extend .button;
+    top: 2rem;
+    right: 2rem;
     svg {
       path {
         fill: $primary-text;
       }
+    }
+
+    @include min(md) {
+      display: none;
     }
   }
 }

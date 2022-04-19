@@ -13,12 +13,13 @@ import { useDispatch } from "react-redux";
 import { actionCreators } from "../../state";
 import ExitButton from "../../components/ExitButton/ExitButton";
 import { fetchQuestions } from "../../api/Api";
+import AnimatedPage from "../../components/AnimetedPage/AnimatedPage";
 
 const ScoreView = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { setReset, setQuestions } = bindActionCreators(
+  const { setReset, setQuestions, setStatus } = bindActionCreators(
     actionCreators,
     dispatch
   );
@@ -41,29 +42,32 @@ const ScoreView = () => {
 
   const resetGame = () => {
     setReset();
+    setStatus("IDLE");
     navigate("/");
   };
 
   const restartGame = () => {
     navigate("../quiz");
-    fetchQuestions(amount, difficulty.toLowerCase(), setQuestions);
+    fetchQuestions(amount, difficulty.toLowerCase(), setQuestions, setStatus);
   };
 
   return (
-    <View isPurple={true}>
-      <img alt="decoration" className={styles.decorationTopLeft} />
-      <img alt="decoration" className={styles.decorationBottomLeft} />
-      <img alt="decoration" className={styles.decorationTopRight} />
-      <img alt="decoration" className={styles.decorationBottomRight} />
-      <div className={styles.container}>
-        <ScoreHeader score={correctResults.length} total={results.length} />
-        <ScoreList results={results} />
-        <Button variant="Orange" onClick={restartGame}>
-          Play Agin
-        </Button>
-        <ExitButton onClick={() => resetGame()} variant="White" />
-      </div>
-    </View>
+    <AnimatedPage>
+      <View isPurple={true}>
+        <img alt="decoration" className={styles.decorationTopLeft} />
+        <img alt="decoration" className={styles.decorationBottomLeft} />
+        <img alt="decoration" className={styles.decorationTopRight} />
+        <img alt="decoration" className={styles.decorationBottomRight} />
+        <div className={styles.container}>
+          <ScoreHeader score={correctResults.length} total={results.length} />
+          <ScoreList results={results} />
+          <Button variant="Orange" onClick={restartGame}>
+            Play Again
+          </Button>
+          <ExitButton onClick={() => resetGame()} variant="White" />
+        </div>
+      </View>
+    </AnimatedPage>
   );
 };
 

@@ -13,9 +13,14 @@
   }
 }
 
+.loading {
+  font-size: 3rem;
+}
+
 .decoration {
   position: absolute;
   max-height: 70%;
+  z-index: -1;
 
   &Top {
     &Right {
@@ -70,7 +75,7 @@
     &Right {
       @extend .decoration;
       right: 0;
-      top: 40%;
+      bottom: 0;
       content: url("../../assets/decorations/quizView/mobile-decoration-middle-right.svg");
 
       @include min(md) {

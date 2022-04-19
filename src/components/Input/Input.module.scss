@@ -1,0 +1,35 @@
+@use "../../styles/abstracts" as *;
+
+.input {
+  width: 100%;
+  background: none;
+  box-shadow: 6px 6px 13px -1px rgba(23, 21, 92, 0.06);
+  border-radius: 10px;
+  color: $white;
+  border-color: $white;
+  padding: 2.4rem 1.5rem;
+  margin-bottom: 3.5rem;
+  outline: none;
+  font-size: 1.8rem;
+  border: 1px solid $white;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &::placeholder {
+    color: $white;
+  }
+
+  @include max(md) {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  &:focus:required:invalid {
+    border-color: red;
+  }
+}

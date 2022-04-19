@@ -3,16 +3,21 @@ import { useNavigate } from "react-router-dom";
 import View from "../../components/View/View";
 import QuestionCard from "../../components/QuestionCard/QuestionCard";
 import Button from "../../components/Button/Button";
+import ExitButton from "../../components/ExitButton/ExitButton";
 import styles from "./QuizView.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { State } from "../../state";
 import { IQuestionsStates } from "../../state/reducers/questionsReducer";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../state";
+import AnimatedPage from "../../components/AnimetedPage/AnimatedPage";
 
 const QuizView = () => {
   const dispatch = useDispatch();
-  const { setResults } = bindActionCreators(actionCreators, dispatch);
+  const { setResults, setReset, setStatus } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
   const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
 
@@ -20,13 +25,19 @@ const QuizView = () => {
     (state: State) => state.questionsReducer
   );
 
-  const { questions }: any = state;
+  const { questions, status }: any = state;
 
   useEffect(() => {
-    if (!questions.length) {
+    if (!questions.length && status === "IDLE") {
       navigate("/");
     }
   }, [questions, navigate]);
+
+  const resetGame = () => {
+    setReset();
+    setStatus("IDLE");
+    navigate("/");
+  };
 
   const nextQuestion = (answer: string) => {
     const increment = current + 1;
@@ -47,15 +58,15 @@ const QuizView = () => {
   };
 
   return (
-    <View>
-      <div className={styles.container}>
+    <AnimatedPage>
+      <View>
         <img alt="decoration" className={styles.decorationTopLeft} />
         <img alt="decoration" className={styles.decorationBottomLeft} />
         <img alt="decoration" className={styles.decorationTopRight} />
         <img alt="decoration" className={styles.decorationBottomRight} />
         <img alt="decoration" className={styles.decorationMiddleRight} />
-        {questions.length ? (
-          <>
+        {status === "SUCCES" ? (
+          <div className={styles.container}>
             <QuestionCard
               current={current}
               questionsAmount={state.questions.length}
@@ -67,12 +78,13 @@ const QuizView = () => {
             <Button onClick={() => nextQuestion("False")} variant="White">
               False
             </Button>
-          </>
+            <ExitButton onClick={() => resetGame()} variant="Purple" />
+          </div>
         ) : (
-          <div> Back to Start </div>
+          <div className={styles.loading}> Loading...</div>
         )}
-      </div>
-    </View>
+      </View>
+    </AnimatedPage>
   );
 };
 

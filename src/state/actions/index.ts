@@ -20,11 +20,16 @@ interface IDifficultyAction {
     payload? : string
 }
 
-interface IResultsActions{
+interface IResultsAction{
     type: ActionType.RESULTS
     payload?: Object
 }
 
+interface IStatusAction{
+    type:ActionType.STATUS
+    payload: 'IDLE' | 'PENDING' | 'SUCCES' | 'FAILED'
+}
 
 
-export type Action = IFetchAction | IResetAction | IAmountAction | IDifficultyAction | IResultsActions
+
+export type Action = IFetchAction | IResetAction | IAmountAction | IDifficultyAction | IResultsAction | IStatusAction
