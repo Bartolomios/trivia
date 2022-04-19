@@ -14,6 +14,7 @@ const Input = ({ handleChange }: Props) => {
       className={styles.input}
       pattern="^(?:[1-9]|[1-4][0-9]|50)$"
       required={true}
+      inputMode="numeric"
       placeholder="Type number from 1 to 50"
     />
   );
